@@ -1,11 +1,17 @@
 import java.lang.reflect.Array;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
+        String checkCard;
+        boolean cardExist = false;
+
         ArrayList<Card> deckOfCards = new ArrayList<>();
-        for( int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++) {
             char suite = ' ';
             switch (i) {
                 case 0 -> {
@@ -25,6 +31,25 @@ public class Main {
                 deckOfCards.add(new Card(suite, String.valueOf(j)));
             }
         }
-        System.out.println(deckOfCards.get(0).equals(new Card('D', "2")));
+        while (true) {
+            cardExist = false;
+            System.out.println("which card do you wanna check?");
+            checkCard = sc.nextLine();
+            for (Card card : deckOfCards) {
+                if (card.equals(new Card(checkCard.charAt(0), checkCard.substring(1)))) {
+                    cardExist = true;
+                    break;
+                }
+            }
+            if (cardExist) {
+                System.out.println("Card exists!");
+            } else {
+                System.out.println("Card doesnt exists...");
+            }
+        }
+
+
+
+
     }
 }
