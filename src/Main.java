@@ -1,5 +1,32 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        ArrayList<Card> deckOfCards = new ArrayList<>();
+        for( int i = 0; i < 4; i++) {
+            char suite = ' ';
+            switch (i) {
+                case 0 -> {
+                    suite = 'D';
+                }
+                case 1 -> {
+                    suite = 'H';
+                }
+                case 2 -> {
+                    suite = 'C';
+                }
+                case 3 -> {
+                    suite = 'S';
+                }
+            }
+            for (int j = 2; j <= 14; j++) {
+                deckOfCards.add(new Card(suite, String.valueOf(j)));
+            }
+        }
+        for(Card card: deckOfCards) {
+            System.out.println(card.getSuite() + card.getValue());
+        }
     }
 }
