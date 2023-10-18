@@ -25,8 +25,6 @@ public class Main {
                 deckOfCards.add(new Card(suite, String.valueOf(j)));
             }
         }
-        for(Card card: deckOfCards) {
-            System.out.println(card.getSuite() + card.getValue());
-        }
+        System.out.println(deckOfCards.get(0).equals(new Card('D', "2")));
     }
 }
