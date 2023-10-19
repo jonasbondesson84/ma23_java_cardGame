@@ -1,6 +1,8 @@
 import java.lang.reflect.Array;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Main {
@@ -28,17 +30,18 @@ public class Main {
                 }
             }
             for (int j = 2; j <= 14; j++) {
-                deckOfCards.add(new Card(suite, String.valueOf(j)));
+                deckOfCards.add(new Card(suite, j));
             }
         }
         while (true) {
             cardExist = false;
             System.out.println("which card do you wanna check?");
-            checkCard = sc.nextLine();
+            checkCard = sc.nextLine().toUpperCase();
             for (Card card : deckOfCards) {
-                if (card.equals(new Card(checkCard.charAt(0), checkCard.substring(1)))) {
+                if (card.equals(new Card(checkCard.charAt(0), Integer.parseInt(checkCard.substring(1))))) {
                     cardExist = true;
                     break;
+
                 }
             }
             if (cardExist) {
@@ -46,6 +49,12 @@ public class Main {
             } else {
                 System.out.println("Card doesnt exists...");
             }
+           Collections.sort(deckOfCards, Card.CompareCard);
+
+            for(Card card: deckOfCards) {
+                System.out.println(card.getSuite()+ "" + card.getValue());
+            }
+
         }
 
 
