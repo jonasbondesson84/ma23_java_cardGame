@@ -32,7 +32,7 @@ public class Main {
             for (int j = 2; j <= 14; j++) {
                 deckOfCards.add(new Card(suite, j));
             }
-            System.out.println("Test");
+            System.out.println("here here");
         }
         while (true) {
             cardExist = false;

@@ -26,11 +26,6 @@ public class Card {
         this.value = value;
     }
 
-    //  @Override
-//    public int compareTo(Card o) {
-//        int lastCmp = this.value.compareTo(o.getValue());
-//        return (lastCmp != 0 ? lastCmp : firstName.compareTo(n.firstName));
-//    }
     public static Comparator<Card> CompareCard = new Comparator<Card>() {
 
         @Override
@@ -41,7 +36,7 @@ public class Card {
             return card1 - card2;
         }
 
-        // Method
+
 
     };
 
