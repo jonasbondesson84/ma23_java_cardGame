@@ -1,10 +1,11 @@
+import java.util.Comparator;
 import java.util.Objects;
 
 public class Card {
     private char suite;
-    private String value;
+    private int value;
 
-    public Card(char suite, String value) {
+    public Card(char suite, int value) {
         this.suite = suite;
         this.value = value;
     }
@@ -17,13 +18,32 @@ public class Card {
         this.suite = suite;
     }
 
-    public String getValue() {
+    public int getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(int value) {
         this.value = value;
     }
+
+    //  @Override
+//    public int compareTo(Card o) {
+//        int lastCmp = this.value.compareTo(o.getValue());
+//        return (lastCmp != 0 ? lastCmp : firstName.compareTo(n.firstName));
+//    }
+    public static Comparator<Card> CompareCard = new Comparator<Card>() {
+
+        @Override
+        public int compare(Card o1, Card o2) {
+            int card1 = o1.getValue();
+            int card2 = o2.getValue();
+
+            return card1 - card2;
+        }
+
+        // Method
+
+    };
 
     @Override
     public boolean equals(Object o) {
