@@ -34,30 +34,26 @@ public class Main {
             }
 
         }
-        while (true) {
-            cardExist = false;
-            System.out.println("which card do you wanna check?");
-            checkCard = sc.nextLine().toUpperCase();
-
-            for (Card card : deckOfCards) {
-                if (card.equals(new Card(checkCard.substring(0,1), Integer.parseInt(checkCard.substring(1))))) {
-                    cardExist = true;
-                    break;
-
-                }
-            }
-            if (cardExist) {
-                System.out.println("Card exists!");
-            } else {
-                System.out.println("Card doesnt exists...");
-            }
-           Collections.sort(deckOfCards, Card.CompareCard);
-
-//            for(Card card: deckOfCards) {
-//                System.out.println(card.getSuite()+ "" + card.getValue());
+//        while (true) {
+//            cardExist = false;
+//            System.out.println("which card do you wanna check?");
+//            checkCard = sc.nextLine().toUpperCase();
+//
+//            for (Card card : deckOfCards) {
+//                if (card.equals(new Card(checkCard.substring(0,1), Integer.parseInt(checkCard.substring(1))))) {
+//                    cardExist = true;
+//                    break;
+//
+//                }
 //            }
-
-        }
+//            if (cardExist) {
+//                System.out.println("Card exists!");
+//            } else {
+//                System.out.println("Card doesnt exists...");
+//            }
+//           Collections.sort(deckOfCards, Card.CompareCard);
+//
+//        }
 
 
 
