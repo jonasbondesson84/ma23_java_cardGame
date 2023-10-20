@@ -12,26 +12,10 @@ public class Main {
         String checkCard;
         boolean cardExist = false;
 
-        ArrayList<Card> deckOfCards = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
-            String suite = "";
-            switch (i) {
-                case 0 -> {
-                    suite = "♦";
-                }
-                case 1 -> {
-                    suite = "♥";
-                }
-                case 2 -> {
-                    suite = "♣";
-                }
-                case 3 -> {
-                    suite = "♠";
-                }
-            }
-            for (int j = 2; j <= 14; j++) {
-                deckOfCards.add(new Card(suite, j));
-            }
+        Game game = new Game();
+
+        for(Card card : game.getDeckofCards()) {
+            System.out.println(card.getSuite() + "" + card.getValue());
 
         }
 //        while (true) {
