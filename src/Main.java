@@ -14,32 +14,33 @@ public class Main {
 
         ArrayList<Card> deckOfCards = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
-            char suite = ' ';
+            String suite = "";
             switch (i) {
                 case 0 -> {
-                    suite = 'D';
+                    suite = "♦";
                 }
                 case 1 -> {
-                    suite = 'H';
+                    suite = "♥";
                 }
                 case 2 -> {
-                    suite = 'C';
+                    suite = "♣";
                 }
                 case 3 -> {
-                    suite = 'S';
+                    suite = "♠";
                 }
             }
             for (int j = 2; j <= 14; j++) {
                 deckOfCards.add(new Card(suite, j));
             }
-            System.out.println("here here");
+
         }
         while (true) {
             cardExist = false;
             System.out.println("which card do you wanna check?");
             checkCard = sc.nextLine().toUpperCase();
+
             for (Card card : deckOfCards) {
-                if (card.equals(new Card(checkCard.charAt(0), Integer.parseInt(checkCard.substring(1))))) {
+                if (card.equals(new Card(checkCard.substring(0,1), Integer.parseInt(checkCard.substring(1))))) {
                     cardExist = true;
                     break;
 
@@ -52,9 +53,9 @@ public class Main {
             }
            Collections.sort(deckOfCards, Card.CompareCard);
 
-            for(Card card: deckOfCards) {
-                System.out.println(card.getSuite()+ "" + card.getValue());
-            }
+//            for(Card card: deckOfCards) {
+//                System.out.println(card.getSuite()+ "" + card.getValue());
+//            }
 
         }
 

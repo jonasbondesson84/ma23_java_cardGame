@@ -2,19 +2,19 @@ import java.util.Comparator;
 import java.util.Objects;
 
 public class Card {
-    private char suite;
+    private String suite;
     private int value;
 
-    public Card(char suite, int value) {
+    public Card(String suite, int value) {
         this.suite = suite;
         this.value = value;
     }
 
-    public char getSuite() {
+    public String getSuite() {
         return suite;
     }
 
-    public void setSuite(char suite) {
+    public void setSuite(String suite) {
         this.suite = suite;
     }
 
@@ -45,7 +45,7 @@ public class Card {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Card card = (Card) o;
-        return suite == card.suite && Objects.equals(value, card.value);
+        return suite.equals(card.suite) && Objects.equals(value, card.value);
     }
 
     @Override
