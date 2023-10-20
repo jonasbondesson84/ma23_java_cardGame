@@ -13,11 +13,26 @@ public class Main {
         boolean cardExist = false;
 
         Game game = new Game();
+        game.dealCardsToPlayers();
 
-        for(Card card : game.getDeckofCards()) {
-            System.out.println(card.getSuite() + "" + card.getValue());
-
+        for (Player player : game.getPlayers()) {
+            for( Card card : player.getHand()) {
+                System.out.println(card.getSuite() + "" + card.getValue());
+            }
+            System.out.println();
         }
+
+        //Computer computer = new Computer();
+//        for(Player player: game.getPlayers()) {
+//            System.out.println(player.getName());
+//        }
+
+
+
+//        for(Card card : game.getDeckofCards()) {
+//            System.out.println(card.getSuite() + "" + card.getValue());
+//
+//        }
 //        while (true) {
 //            cardExist = false;
 //            System.out.println("which card do you wanna check?");

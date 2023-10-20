@@ -1,9 +1,12 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Player {
-    Scanner sc = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in);
     private String name;
     private int numbersOfTricks;
+
+    private ArrayList<Card> hand = new ArrayList<>();
 
     public Player(String name) {
         this.name = name;
@@ -26,11 +29,19 @@ public class Player {
         this.numbersOfTricks = numbersOfTricks;
     }
 
-    public void createPlayer() {
+    public ArrayList<Card> getHand() {
+        return hand;
+    }
+
+    public void setHand(ArrayList<Card> hand) {
+        this.hand = hand;
+    }
+
+    static public Player createPlayer() {
         String name;
         System.out.println("Please enter your name.");
         name = sc.nextLine();
-        Player player = new Player(name);
+        return new Player(name);
     }
 
 }
